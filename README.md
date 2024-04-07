@@ -16,20 +16,58 @@ http://127.0.0.1:8000/
 
 ### GET /api/hotels/
 
-List all hotels
+List all hotels.
 
 ### POST /api/hotels/
 
-Create a new hotel
+Create a new hotel.
 
-The hotel object should be in the following format:
+The input hotel object should be in the following format:
 
-```
+```json
 {
     "name": "Hotel Name",
     "address": "Hotel Address",
-    "price": 100.00,
+    "price": 100.0,
     "availability": true
+}
+```
+
+### GET /api/reservations/
+
+List all reservations.
+
+### POST /api/reservations/
+
+Create a new reservation.
+
+The input reservation object should be in the following format:
+
+```json
+{
+    "hotel": "hotel_id",
+    "check_in": "2022-12-01",
+    "check_out": "2022-12-10",
+    "guest_list": [
+        {
+            "guest_name": "John Doe",
+            "age": 30,
+            "gender": "Male"
+        },
+        {
+            "guest_name": "Jane Doe",
+            "age": 28,
+            "gender": "Female"
+        }
+    ]
+}
+```
+
+Response
+
+```json
+{
+    "confirmation_number": "reservation_id"
 }
 ```
 
