@@ -31,9 +31,11 @@ def get_reservations(request):
         serializer = ReservationSerializer(reservations, many=True)
         return Response(serializer.data)
     elif request.method == "POST":
+        print("Request data:", request.data)
         serializer = ReservationSerializer(data=request.data)
         if serializer.is_valid():
             reservation = serializer.save()
             return Response({"confirmation_number": reservation.id}, status=201)
         else:
+            print("Error:", serializer.errors)
             return Response(serializer.errors, status=400)
