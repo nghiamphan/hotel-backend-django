@@ -1,0 +1,1 @@
+web: gunicorn hotel_backend_django.wsgi
