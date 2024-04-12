@@ -1,0 +1,23 @@
+GET http://hotel-backend-django-dev.us-west-2.elasticbeanstalk.com/api/hotels/
+
+###
+POST http://hotel-backend-django-dev.us-west-2.elasticbeanstalk.com/api/reservations/
+Content-Type: application/json
+
+{
+    "hotel": 15,
+    "check_in": "2024-05-12",
+    "check_out": "2024-05-13",
+    "guest_list": [
+        {
+            "guest_name": "John",
+            "age": 30,
+            "gender": "Male"
+        },
+        {
+            "guest_name": "Jane",
+            "age": 29,
+            "gender": "Female"
+        }
+    ]
+}
