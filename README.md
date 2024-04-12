@@ -74,3 +74,41 @@ Response
 ## Database
 
 SQLite is used as the database for this project. The database file is located at `db.sqlite3`.
+
+## Deployment
+
+The project is deployed on AWS Elastic Beanstalk. The URL to access the deployed project is:
+
+http://hotel-backend-django-dev.us-west-2.elasticbeanstalk.com/
+
+Steps to deploy the project on AWS Elastic Beanstalk:
+
+1. Install the Elastic Beanstalk CLI
+
+```bash
+pip install awsebcli
+```
+
+2. Initialize the Elastic Beanstalk project
+
+```bash
+eb init
+```
+
+3. Create a new environment
+
+```bash
+eb create
+```
+
+4. Deploy newly committed code
+
+```bash
+eb deploy
+```
+
+To deploy staged code
+
+```bash
+eb deploy --staged
+```
